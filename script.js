@@ -1,10 +1,10 @@
 const loadBooks = () => {
     const inputValue = document.getElementById('input-value').value;
     if (inputValue === '') {
-        document.getElementById('total-found').innerText = 'please write a book name'
+        document.getElementById('total-found').innerText = 'Please provide a book name'
         return
     }
-    document.getElementById('input-value').value = '';
+   
     document.getElementById('book-container').textContent = '';
     document.getElementById('total-found').textContent = '';
     console.log(inputValue)
@@ -14,6 +14,7 @@ const loadBooks = () => {
         .then(data => displayBooks(data))
 }
 const displayBooks = books => {
+    document.getElementById('input-value').value = '';
     console.log(books)
     document.getElementById('spinner').classList.add('d-none')
    if (books.numFound) {
