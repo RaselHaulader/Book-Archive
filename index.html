@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap css cdn link  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Book Archive</title>
 </head>
+
 <body>
-    
+    <header>
+        <h2 class="text-center my-5">Search You desire books</h2>
+        <!-- start nav / search section  -->
+        <nav class="mb-4 navbar navbar-expand-lg navbar-light container" style="background-color: rgb(209, 217, 253);">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <img width="200px" src="logo.svg" alt="">
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <div class="d-flex ms-auto">
+                        <input id="input-value" class="form-control me-2" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button onclick="loadBooks()" class="btn btn-outline-primary" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section class="container">
+            <!-- loader container  -->
+            <div class="text-center d-none" id="spinner">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+            </div>
+            <!-- error message container  -->
+            <div>
+               <div id="total-found" class="text-center fw-bolder my-3">
+
+               </div>
+            </div>
+            <!-- books result container  -->
+
+            <div id="book-container" class="row row-cols-1 row-cols-md-4 g-4">
+               
+            </div>
+
+        </section>
+    </main>
+
 
     <!-- bootstrap js cdn link  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <!-- my js script  -->
     <script src="script.js"></script>
 </body>
+
 </html>
