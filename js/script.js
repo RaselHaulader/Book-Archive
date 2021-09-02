@@ -24,7 +24,6 @@ const loadBooks = () => {
 }
 // fetching data set to display
 const displayBooks = books => {
-
     inputField.value = '';
     // stop loader
     spinner.classList.add('d-none')
