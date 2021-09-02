@@ -61,7 +61,7 @@ const displayBooks = books => {
         ${img}
         <div class="card-body">
             <p class="card-title fs-3 text-center text-white fw-bolder">${book.title}</p>
-            <p class="fs-5 ">Author: <span class="fst-italic"> ${author} </span></p>
+            <p class=" ">Author: <span class="fst-italic"> ${author} </span></p>
             <p>Publisher : ${book.publisher?.[0]} </p>
             <p>First published in ${book.first_publish_year}</p>
            </div>
