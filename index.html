@@ -15,7 +15,7 @@
 <body>
     <header>
         <!-- start nav / search section  -->
-        <nav class="mb-4 navbar navbar-expand-lg navbar-light container" style="background-color: rgb(209, 217, 253);">
+        <nav class="mb-4 navbar navbar-expand-lg navbar-light container-lg" style="background-color: rgb(196, 202, 255);">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
@@ -25,7 +25,7 @@
                 <img width="200px" src="logo.svg" alt="">
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <div class="d-flex ms-auto">
-                        <input id="input-value" class="form-control me-2" type="search" placeholder="Search"
+                        <input id="input-value" class="form-control me-2 " type="search" placeholder="Search"
                             aria-label="Search">
                         <button onclick="loadBooks()" class="btn btn-outline-primary" type="submit">Search</button>
                     </div>
@@ -35,10 +35,10 @@
     </header>
     <main>
 
-        <section class="container">
+        <section class="container-lg">
             <!-- loader container  -->
             <div class="text-center d-none" id="spinner">
-                <div class="spinner-border" role="status">
+                <div class="spinner-border text-primary" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
