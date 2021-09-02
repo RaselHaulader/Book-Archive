@@ -1,26 +1,33 @@
+const inputField = document.getElementById('input-value');
+const totalFound =   document.getElementById('total-found');
+const bookContainer =  document.getElementById('book-container');
+const spinner =  document.getElementById('spinner');
 const loadBooks = () => {
-    const inputValue = document.getElementById('input-value').value;
-    if (inputValue === '') {
-        document.getElementById('total-found').innerText = 'Please provide a book name'
+   
+    if (inputField.value === '') {
+        totalFound.classList.remove('text-primary');
+        totalFound.classList.add('text-danger');
+        totalFound.innerText = 'Please Provide a Book Name';
         return
-    }
-
-    document.getElementById('book-container').textContent = '';
-    document.getElementById('total-found').textContent = '';
-    console.log(inputValue)
-    document.getElementById('spinner').classList.remove('d-none')
-    fetch(`https://openlibrary.org/search.json?q=${inputValue}`)
+    };
+    bookContainer.textContent = '';
+    totalFound.textContent = '';
+    spinner.classList.remove('d-none')
+    fetch(`https://openlibrary.org/search.json?q=${inputField.value}`)
         .then(res => res.json())
         .then(data => displayBooks(data))
 }
 const displayBooks = books => {
-    document.getElementById('input-value').value = '';
-    console.log(books)
-    document.getElementById('spinner').classList.add('d-none')
+    inputField.value = '';
+    spinner.classList.add('d-none')
     if (books.numFound) {
-        document.getElementById('total-found').innerText = `Total result found ${books.numFound}`
+        totalFound.classList.remove('text-danger')
+        totalFound.classList.add('text-primary')
+        totalFound.innerText = `Total result found ${books.numFound}`;
     } else {
-        document.getElementById('total-found').innerText = `No Result Found`
+        totalFound.classList.remove('text-primary');
+        totalFound.classList.add('text-danger');
+        totalFound.innerText = `No Result Found`
     }
     const container = document.getElementById('book-container');
     books.docs.forEach(book => {
