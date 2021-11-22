@@ -21,6 +21,7 @@ const loadBooks = () => {
     fetch(`https://openlibrary.org/search.json?q=${inputField.value}`)
         .then(res => res.json())
         .then(data => displayBooks(data))
+        .catch(err => console.log('server gese'))
 }
 // fetching data set to display
 const displayBooks = books => {
